@@ -362,7 +362,7 @@ function validar(){
 ['nombre','telefono','whatsapp','horario','direccion','aclaraciones'].forEach(id=>{
   const el=document.getElementById(id);if(el)el.addEventListener('input',validar);
 });
-function enviarPedido(){
+async function enviarPedido(){
   const itemsTexto=carrito.map(i=>i.nombre).join(', ');
   const adicionalesTexto=[extras.papas>0?`Papas extras x${extras.papas}`:'',extras.gaseosa>0?`Gaseosa x${extras.gaseosa}`:''].filter(Boolean).join(', ')||'Ninguno';
   const total=carrito.reduce((s,i)=>s+i.precio,0)+extras.papas*3000+extras.gaseosa*3000;
